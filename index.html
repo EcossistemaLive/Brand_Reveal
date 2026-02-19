@@ -171,19 +171,83 @@
             box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
         }
 
-        @media (max-width: 768px) {
-            .brand-grid {
-                grid-template-columns: 1fr;
-            }
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: rgba(15, 28, 46, 0.8);
+            padding: 10px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            z-index: 1000;
+        }
 
-            h1 {
-                font-size: 3rem;
-            }
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            font-size: 0.8rem;
+            text-align: center;
         }
     </style>
 </head>
 
-<body>
+<nav>
+    <a href="#home">Início</a>
+    <a href="#vidi">VIDI</a>
+    <a href="#pillars">Pilares</a>
+    <a href="#cupula">Cúpula</a>
+    <a href="#gallery">Galeria</a>
+</nav>
+
+<body id="home">
 
     <header>
         <div class="subtitle">A Nova Era da Estratégia Corporativa</div>
@@ -251,6 +315,57 @@
             </div>
             <div>
                 <img src="cupula_poster.png" alt="Cúpula CEO Event Poster" class="brand-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="gallery">
+        <h2
+            style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 2.5rem; text-align: center;">
+            Galeria de Explorações</h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px;">Compare todas as versões e
+            selecione a identidade que melhor comunica a sua visão.</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="vidi_thin_1.png" alt="VIDI Thin 1">
+                <div class="gallery-label">VIDI - Linhas Finas (Opção A)</div>
+            </div>
+            <div class="gallery-item">
+                <img src="vidi_thin_2.png" alt="VIDI Thin 2">
+                <div class="gallery-label">VIDI - Linhas Finas (Opção B)</div>
+            </div>
+            <div class="gallery-item">
+                <img src="vidi_thin_3.png" alt="VIDI Thin 3">
+                <div class="gallery-label">VIDI - Linhas Finas (Opção C)</div>
+            </div>
+            <div class="gallery-item">
+                <img src="vidi_thin_4.png" alt="VIDI Thin 4">
+                <div class="gallery-label">VIDI - Linhas Finas (Opção D)</div>
+            </div>
+            <div class="gallery-item">
+                <img src="vidi_v10.png" alt="VIDI V10">
+                <div class="gallery-label">VIDI - Executivo V10</div>
+            </div>
+            <div class="gallery-item">
+                <img src="vidi_v1.png" alt="VIDI V1">
+                <div class="gallery-label">VIDI - Conceito Visão V1</div>
+            </div>
+            <div class="gallery-item">
+                <img src="vidi_v2.png" alt="VIDI V2">
+                <div class="gallery-label">VIDI - Conceito Visão V2</div>
+            </div>
+            <div class="gallery-item">
+                <img src="cupula_corp.png" alt="Cúpula Corp">
+                <div class="gallery-label">Cúpula CEO - Executivo Final</div>
+            </div>
+            <div class="gallery-item">
+                <img src="cupula_v4.png" alt="Cúpula V4">
+                <div class="gallery-label">Cúpula CEO - Arquitetura V4</div>
+            </div>
+            <div class="gallery-item">
+                <img src="cupula_v1.png" alt="Cúpula V1">
+                <div class="gallery-label">Cúpula CEO - Panteão V1</div>
             </div>
         </div>
     </div>
